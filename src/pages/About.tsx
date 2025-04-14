@@ -1,7 +1,6 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Heart, Users, Globe, BarChart } from 'lucide-react';
+import { Heart, Users, Globe, BarChart, MapPin } from 'lucide-react';
 
 const About = () => {
   return (
