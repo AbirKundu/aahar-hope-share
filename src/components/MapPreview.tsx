@@ -71,7 +71,7 @@ const MapPreview = () => {
         
         <div className="text-center mt-10">
           <Button asChild className="bg-orange-500 hover:bg-orange-600">
-            <a href="/find">See All Available Food</a>
+            <a href="/find" className="text-orange-50">See All Available Food</a>
           </Button>
         </div>
       </div>

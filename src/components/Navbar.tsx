@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Pizza } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <Heart className="text-red-500" size={24} />
+            <Pizza className="text-orange-500" size={24} />
             <span className="text-xl font-bold text-gray-800">Aahar</span>
           </Link>
           
