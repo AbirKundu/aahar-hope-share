@@ -24,7 +24,7 @@ const FindFood = () => {
       distance: "0.8 km",
       availableUntil: "8:00 PM",
       type: "Vegetarian",
-      coordinates: [72.8777, 19.0760], // Mumbai coordinates
+      coordinates: [72.8777, 19.0760] as [number, number], // Mumbai coordinates with type assertion
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
     },
     {
@@ -35,7 +35,7 @@ const FindFood = () => {
       distance: "1.2 km",
       availableUntil: "6:30 PM",
       type: "Vegetarian",
-      coordinates: [72.8856, 19.0822], // Slight offset from Mumbai
+      coordinates: [72.8856, 19.0822] as [number, number], // Slight offset from Mumbai with type assertion
       image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
     },
     {
@@ -46,6 +46,7 @@ const FindFood = () => {
       distance: "2.5 km",
       availableUntil: "9:00 PM",
       type: "Mixed",
+      coordinates: [72.8900, 19.0700] as [number, number], // Type assertion
       image: "https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1930&q=80"
     },
     {
@@ -56,6 +57,7 @@ const FindFood = () => {
       distance: "3.1 km",
       availableUntil: "7:15 PM",
       type: "Vegan",
+      coordinates: [72.8750, 19.0650] as [number, number], // Type assertion
       image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
@@ -66,6 +68,7 @@ const FindFood = () => {
       distance: "1.8 km",
       availableUntil: "8:30 PM",
       type: "Vegetarian",
+      coordinates: [72.8650, 19.0800] as [number, number], // Type assertion
       image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     },
     {
@@ -76,6 +79,7 @@ const FindFood = () => {
       distance: "4.2 km",
       availableUntil: "6:00 PM",
       type: "Vegan",
+      coordinates: [72.9000, 19.0900] as [number, number], // Type assertion
       image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80"
     }
   ];
@@ -89,7 +93,7 @@ const FindFood = () => {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [72.8777, 19.0760], // Default to Mumbai
+        center: [72.8777, 19.0760] as [number, number], // Default to Mumbai with type assertion
         zoom: 12
       });
 
