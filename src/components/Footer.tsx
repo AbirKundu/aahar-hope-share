@@ -25,6 +25,8 @@ const Footer = () => {
               <Link to="/find" className="hover:text-orange-400 transition-colors">Find Food</Link>
               <Link to="/about" className="hover:text-orange-400 transition-colors">About Us</Link>
               <Link to="/contact" className="hover:text-orange-400 transition-colors">Contact</Link>
+              <Link to="/impact" className="hover:text-orange-400 transition-colors">Impact</Link>
+              <Link to="/volunteer" className="hover:text-orange-400 transition-colors">Volunteer</Link>
             </nav>
           </div>
 
@@ -37,11 +39,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-orange-500" />
-                <span>+91 9876543210</span>
+                <span>+880 1712345678</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-orange-500" />
-                <span>Mumbai, India</span>
+                <span>Dhaka, Bangladesh</span>
               </div>
             </div>
           </div>

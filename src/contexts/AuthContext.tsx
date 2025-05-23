@@ -12,6 +12,7 @@ export interface User {
   role: UserRole;
   points?: number; // For volunteers
   status: 'active' | 'suspended';
+  permissions?: string[]; // Added for fine-grained access control
 }
 
 // Interface for the auth context
@@ -22,6 +23,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   hasRole: (role: UserRole | UserRole[]) => boolean;
+  hasPermission: (permission: string) => boolean; // Added for permission check
 }
 
 // Create the context with default values
@@ -32,6 +34,7 @@ const AuthContext = createContext<AuthContextType>({
   login: async () => {},
   logout: () => {},
   hasRole: () => false,
+  hasPermission: () => false,
 });
 
 // Sample users for demo purposes (would be replaced with database in real app)
@@ -50,6 +53,7 @@ const mockUsers: User[] = [
     role: 'volunteer',
     points: 120,
     status: 'active',
+    permissions: ['collect_food', 'deliver_food']
   },
   {
     id: '3',
@@ -64,6 +68,7 @@ const mockUsers: User[] = [
     email: 'admin@example.com',
     role: 'admin',
     status: 'active',
+    permissions: ['manage_users', 'manage_donations', 'manage_volunteers', 'view_reports', 'manage_system']
   },
 ];
 
@@ -120,6 +125,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return user.role === role;
   };
 
+  // Function to check if user has a specific permission
+  const hasPermission = (permission: string) => {
+    if (!user || !user.permissions) return false;
+    
+    // Admin users have all permissions
+    if (user.role === 'admin') return true;
+    
+    return user.permissions.includes(permission);
+  };
+
   return (
     <AuthContext.Provider value={{
       user,
@@ -128,6 +143,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       login,
       logout,
       hasRole,
+      hasPermission,
     }}>
       {children}
     </AuthContext.Provider>

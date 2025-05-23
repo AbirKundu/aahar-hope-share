@@ -20,66 +20,66 @@ const FindFood = () => {
       id: 1,
       name: "Homemade Vegetable Curry & Rice",
       description: "Freshly cooked vegetable curry and rice, enough for 4 people",
-      location: "123 Park Street, Mumbai",
+      location: "123 Park Street, Dhaka",
       distance: "0.8 km",
       availableUntil: "8:00 PM",
       type: "Vegetarian",
-      coordinates: [72.8777, 19.0760] as [number, number], // Mumbai coordinates with type assertion
+      coordinates: [90.4125, 23.8103] as [number, number], // Dhaka coordinates with type assertion
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
     },
     {
       id: 2,
       name: "Assorted Fresh Bakery Items",
       description: "Assorted bread, pastries and cookies from today's baking",
-      location: "45 Baker Avenue, Mumbai",
+      location: "45 Baker Avenue, Dhaka",
       distance: "1.2 km",
       availableUntil: "6:30 PM",
       type: "Vegetarian",
-      coordinates: [72.8856, 19.0822] as [number, number], // Slight offset from Mumbai with type assertion
+      coordinates: [90.4230, 23.8230] as [number, number], // Slight offset from Dhaka with type assertion
       image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
     },
     {
       id: 3,
       name: "Restaurant Lunch Extras",
       description: "Packaged meals from our lunch service, includes rice and curry dishes",
-      location: "78 Main Road, Mumbai",
+      location: "78 Main Road, Chittagong",
       distance: "2.5 km",
       availableUntil: "9:00 PM",
       type: "Mixed",
-      coordinates: [72.8900, 19.0700] as [number, number], // Type assertion
+      coordinates: [91.8313, 22.3308] as [number, number], // Chittagong coordinates with type assertion
       image: "https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1930&q=80"
     },
     {
       id: 4,
       name: "Fresh Fruits Assortment",
       description: "Oranges, apples and bananas that won't be sold today",
-      location: "34 Market Street, Mumbai",
+      location: "34 Market Street, Sylhet",
       distance: "3.1 km",
       availableUntil: "7:15 PM",
       type: "Vegan",
-      coordinates: [72.8750, 19.0650] as [number, number], // Type assertion
+      coordinates: [91.8711, 24.8949] as [number, number], // Sylhet coordinates with type assertion
       image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 5,
       name: "Home-cooked Biryani",
       description: "Delicious vegetable biryani, freshly prepared today",
-      location: "56 Garden Road, Mumbai",
+      location: "56 Garden Road, Rajshahi",
       distance: "1.8 km",
       availableUntil: "8:30 PM",
       type: "Vegetarian",
-      coordinates: [72.8650, 19.0800] as [number, number], // Type assertion
+      coordinates: [88.6042, 24.3745] as [number, number], // Rajshahi coordinates with type assertion
       image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     },
     {
       id: 6,
       name: "Mixed Vegetables",
       description: "Fresh vegetables from our local farm, surplus from today's harvest",
-      location: "90 Farm Lane, Mumbai",
+      location: "90 Farm Lane, Khulna",
       distance: "4.2 km",
       availableUntil: "6:00 PM",
       type: "Vegan",
-      coordinates: [72.9000, 19.0900] as [number, number], // Type assertion
+      coordinates: [89.5538, 22.8456] as [number, number], // Khulna coordinates with type assertion
       image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80"
     }
   ];
@@ -93,7 +93,7 @@ const FindFood = () => {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [72.8777, 19.0760] as [number, number], // Default to Mumbai with type assertion
+        center: [90.4125, 23.8103] as [number, number], // Default to Dhaka with type assertion
         zoom: 12
       });
 
