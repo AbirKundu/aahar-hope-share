@@ -28,7 +28,7 @@ const Login = () => {
       toast({
         title: "Login successful",
         description: "You have been logged in successfully.",
-        variant: "success",
+        variant: "default", // Changed from "success" to "default"
       });
       navigate('/');
     } catch (error: any) {

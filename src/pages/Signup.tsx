@@ -43,7 +43,7 @@ const Signup = () => {
       toast({
         title: "Account created",
         description: "Your account has been created successfully. Please log in.",
-        variant: "success",
+        variant: "default", // Changed from "success" to "default"
       });
       
       navigate('/login');
