@@ -12,9 +12,9 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
-import { BarChart, PieChart, LineChart } from '@/components/ui/chart';
+import { ChartContainer } from '@/components/ui/chart';
 import { useToast } from '@/components/ui/use-toast';
-import { Check, X, AlertTriangle, User, Users, UserCheck, MessageSquare, Calendar, Clock, Settings, Shield, Search, Filter, Download, Edit, Trash2, Eye, Lock } from 'lucide-react';
+import { Check, X, AlertTriangle, User, Users, UserCheck, MessageSquare, Calendar, Clock, Settings, Shield, Search, Filter, Download, Edit, Trash2, Eye, Lock, BarChart, PieChart, LineChart } from 'lucide-react';
 import { Navigate } from 'react-router-dom';
 
 const Admin = () => {

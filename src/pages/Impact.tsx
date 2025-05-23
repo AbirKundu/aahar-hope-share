@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -482,7 +481,7 @@ const Impact = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Mizanur Rahman Tazim</h4>
                   <p className="text-sm text-gray-500">Director</p>
@@ -490,7 +489,7 @@ const Impact = () => {
                 
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Mostafa Tahsin Ekleel</h4>
                   <p className="text-sm text-gray-500">Co-Founder</p>
@@ -498,7 +497,7 @@ const Impact = () => {
                 
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Safwat Afreen Bushra</h4>
                   <p className="text-sm text-gray-500">Operations Manager</p>
@@ -506,7 +505,7 @@ const Impact = () => {
                 
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Abir Kundu</h4>
                   <p className="text-sm text-gray-500">Technology Lead</p>
@@ -514,7 +513,7 @@ const Impact = () => {
                 
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Maishan Nadis Sindeed</h4>
                   <p className="text-sm text-gray-500">Outreach Coordinator</p>
@@ -522,7 +521,7 @@ const Impact = () => {
                 
                 <div className="text-center">
                   <div className="h-32 w-32 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <User className="h-16 w-16 text-orange-300" />
+                    <Users className="h-16 w-16 text-orange-300" />
                   </div>
                   <h4 className="font-medium">Proma Barua</h4>
                   <p className="text-sm text-gray-500">Financial Manager</p>
