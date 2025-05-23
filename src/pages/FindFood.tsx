@@ -12,39 +12,63 @@ const FindFood = () => {
   const mockFoodItems = [
     {
       id: 1,
-      name: "Homemade Dinner",
+      name: "Homemade Vegetable Curry & Rice",
       description: "Freshly cooked vegetable curry and rice, enough for 4 people",
       location: "123 Park Street, Mumbai",
       distance: "0.8 km",
       availableUntil: "8:00 PM",
-      type: "Vegetarian"
+      type: "Vegetarian",
+      image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
     },
     {
       id: 2,
-      name: "Bakery Leftovers",
+      name: "Assorted Fresh Bakery Items",
       description: "Assorted bread, pastries and cookies from today's baking",
       location: "45 Baker Avenue, Mumbai",
       distance: "1.2 km",
       availableUntil: "6:30 PM",
-      type: "Vegetarian"
+      type: "Vegetarian",
+      image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
     },
     {
       id: 3,
-      name: "Restaurant Extras",
+      name: "Restaurant Lunch Extras",
       description: "Packaged meals from our lunch service, includes rice and curry dishes",
       location: "78 Main Road, Mumbai",
       distance: "2.5 km",
       availableUntil: "9:00 PM",
-      type: "Mixed"
+      type: "Mixed",
+      image: "https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1930&q=80"
     },
     {
       id: 4,
-      name: "Fresh Fruits",
+      name: "Fresh Fruits Assortment",
       description: "Oranges, apples and bananas that won't be sold today",
       location: "34 Market Street, Mumbai",
       distance: "3.1 km",
       availableUntil: "7:15 PM",
-      type: "Vegan"
+      type: "Vegan",
+      image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: 5,
+      name: "Home-cooked Biryani",
+      description: "Delicious vegetable biryani, freshly prepared today",
+      location: "56 Garden Road, Mumbai",
+      distance: "1.8 km",
+      availableUntil: "8:30 PM",
+      type: "Vegetarian",
+      image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      id: 6,
+      name: "Mixed Vegetables",
+      description: "Fresh vegetables from our local farm, surplus from today's harvest",
+      location: "90 Farm Lane, Mumbai",
+      distance: "4.2 km",
+      availableUntil: "6:00 PM",
+      type: "Vegan",
+      image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80"
     }
   ];
 
@@ -106,7 +130,13 @@ const FindFood = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {mockFoodItems.map((item) => (
                 <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-all">
-                  <div className="h-40 bg-orange-100"></div>
+                  <div className="h-48 bg-orange-100 overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-cover transition-transform hover:scale-105"
+                    />
+                  </div>
                   <CardContent className="p-5">
                     <div className="flex justify-between items-start">
                       <h3 className="font-semibold text-lg">{item.name}</h3>
