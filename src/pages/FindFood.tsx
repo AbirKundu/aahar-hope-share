@@ -1,14 +1,20 @@
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Search, MapPin, Clock, Filter } from 'lucide-react';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const FindFood = () => {
   const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
+  const mapContainer = useRef<HTMLDivElement | null>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
+  const [mapboxToken, setMapboxToken] = useState<string>('');
+
   const mockFoodItems = [
     {
       id: 1,
@@ -18,6 +24,7 @@ const FindFood = () => {
       distance: "0.8 km",
       availableUntil: "8:00 PM",
       type: "Vegetarian",
+      coordinates: [72.8777, 19.0760], // Mumbai coordinates
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
     },
     {
@@ -28,6 +35,7 @@ const FindFood = () => {
       distance: "1.2 km",
       availableUntil: "6:30 PM",
       type: "Vegetarian",
+      coordinates: [72.8856, 19.0822], // Slight offset from Mumbai
       image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
     },
     {
@@ -71,6 +79,47 @@ const FindFood = () => {
       image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80"
     }
   ];
+
+  useEffect(() => {
+    if (viewMode === 'map' && mapContainer.current && !map.current) {
+      if (!mapboxToken) return;
+      
+      mapboxgl.accessToken = mapboxToken;
+      
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [72.8777, 19.0760], // Default to Mumbai
+        zoom: 12
+      });
+
+      // Add navigation controls
+      map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+      
+      // Add markers for each food item
+      mockFoodItems.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url(https://img.icons8.com/color/48/000000/marker.png)';
+        el.style.width = '32px';
+        el.style.height = '32px';
+        el.style.backgroundSize = '100%';
+        
+        new mapboxgl.Marker(el)
+          .setLngLat(item.coordinates)
+          .setPopup(new mapboxgl.Popup({ offset: 25 })
+            .setHTML(`<h3>${item.name}</h3><p>${item.description}</p>`))
+          .addTo(map.current);
+      });
+      
+      return () => {
+        if (map.current) {
+          map.current.remove();
+          map.current = null;
+        }
+      };
+    }
+  }, [viewMode, mapboxToken]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -118,13 +167,26 @@ const FindFood = () => {
 
         <div className="container mx-auto px-4 py-8">
           {viewMode === 'map' ? (
-            <div className="bg-gray-200 rounded-lg h-[600px] flex items-center justify-center">
-              <div className="text-center p-8 bg-white/90 backdrop-blur-sm rounded-lg">
-                <MapPin className="h-10 w-10 text-orange-500 mx-auto mb-3" />
-                <h3 className="text-xl font-medium mb-2">Map View</h3>
-                <p className="text-gray-600 mb-4">This will display an interactive map showing all available food locations near you.</p>
-                <Button className="bg-orange-500 hover:bg-orange-600">Use My Location</Button>
-              </div>
+            <div className="bg-gray-200 rounded-lg h-[600px] flex items-center justify-center relative">
+              {!mapboxToken ? (
+                <div className="text-center p-8 bg-white/90 backdrop-blur-sm rounded-lg z-10 absolute">
+                  <MapPin className="h-10 w-10 text-orange-500 mx-auto mb-3" />
+                  <h3 className="text-xl font-medium mb-2">Enter Mapbox Token</h3>
+                  <p className="text-gray-600 mb-4">Please enter your Mapbox access token to view the map:</p>
+                  <Input 
+                    className="mb-4" 
+                    placeholder="Enter Mapbox token..." 
+                    value={mapboxToken}
+                    onChange={(e) => setMapboxToken(e.target.value)}
+                  />
+                  <Button className="bg-orange-500 hover:bg-orange-600">Set Token</Button>
+                </div>
+              ) : null}
+              <div 
+                ref={mapContainer} 
+                className="w-full h-full rounded-lg"
+                style={{ display: mapboxToken ? 'block' : 'none' }}
+              />
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

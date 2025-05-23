@@ -1,3 +1,4 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Heart, Users, Globe, BarChart, MapPin } from 'lucide-react';
@@ -92,30 +93,60 @@ const About = () => {
               {/* Team Member 1 */}
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold text-gray-800">Amit Sharma</h3>
+                <h3 className="text-xl font-semibold text-gray-800">Mizanur Rahman Tazim</h3>
                 <p className="text-orange-500 mb-3">Founder & CEO</p>
                 <p className="text-gray-600 text-sm">
-                  Passionate about reducing food waste and making a positive impact in communities.
+                  Leading our mission to create a world where no food goes to waste and no one goes hungry.
                 </p>
               </div>
               
               {/* Team Member 2 */}
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold text-gray-800">Priya Patel</h3>
-                <p className="text-orange-500 mb-3">Operations Director</p>
+                <h3 className="text-xl font-semibold text-gray-800">Mostafa Tahsin Ekleel</h3>
+                <p className="text-orange-500 mb-3">CTO</p>
                 <p className="text-gray-600 text-sm">
-                  Ensures smooth day-to-day operations and builds community partnerships.
+                  Driving our technological innovations to connect donors and recipients effectively.
                 </p>
               </div>
               
               {/* Team Member 3 */}
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold text-gray-800">Rahul Kumar</h3>
-                <p className="text-orange-500 mb-3">Technology Lead</p>
+                <h3 className="text-xl font-semibold text-gray-800">Safwat Afreen Bushra</h3>
+                <p className="text-orange-500 mb-3">Operations Director</p>
                 <p className="text-gray-600 text-sm">
-                  Develops and maintains the platform to connect donors and recipients efficiently.
+                  Managing our day-to-day operations and ensuring food reaches those in need on time.
+                </p>
+              </div>
+
+              {/* Team Member 4 */}
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                <h3 className="text-xl font-semibold text-gray-800">Abir Kundu</h3>
+                <p className="text-orange-500 mb-3">Community Manager</p>
+                <p className="text-gray-600 text-sm">
+                  Building and nurturing relationships with donors, volunteers, and recipient communities.
+                </p>
+              </div>
+
+              {/* Team Member 5 */}
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                <h3 className="text-xl font-semibold text-gray-800">Maishan Nadis Sindeed</h3>
+                <p className="text-orange-500 mb-3">Marketing Director</p>
+                <p className="text-gray-600 text-sm">
+                  Spreading awareness about our mission and expanding our reach across communities.
+                </p>
+              </div>
+
+              {/* Team Member 6 */}
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                <h3 className="text-xl font-semibold text-gray-800">Proma Barua</h3>
+                <p className="text-orange-500 mb-3">Volunteer Coordinator</p>
+                <p className="text-gray-600 text-sm">
+                  Recruiting, training, and coordinating our network of dedicated volunteers.
                 </p>
               </div>
             </div>
