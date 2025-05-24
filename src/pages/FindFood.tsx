@@ -25,34 +25,38 @@ interface FoodItem {
   type: string;
   availableTime: string;
   location: string;
+  image?: string;
 }
 
 const FindFood = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState('all');
 
-  // Mock data for available food
+  // Mock data for available food with images
   const availableFood: FoodItem[] = [
     {
       id: 1,
       title: "Homemade Dinner",
       type: "Cooked Meal",
       availableTime: "5:00 PM - 8:00 PM",
-      location: "Park Street"
+      location: "Park Street",
+      image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=200&fit=crop"
     },
     {
       id: 2,
       title: "Fresh Vegetables",
       type: "Raw Food",
       availableTime: "10:00 AM - 2:00 PM",
-      location: "Central Market"
+      location: "Central Market",
+      image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&h=200&fit=crop"
     },
     {
       id: 3,
       title: "Bakery Items",
       type: "Bread & Pastries",
       availableTime: "3:00 PM - 7:00 PM",
-      location: "Baker Avenue"
+      location: "Baker Avenue",
+      image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=200&fit=crop"
     },
   ];
 
@@ -137,6 +141,15 @@ const FindFood = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredFood.map(food => (
               <Card key={food.id}>
+                {food.image && (
+                  <div className="w-full h-48 overflow-hidden rounded-t-lg">
+                    <img 
+                      src={food.image} 
+                      alt={food.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <CardHeader>
                   <CardTitle>{food.title}</CardTitle>
                 </CardHeader>
