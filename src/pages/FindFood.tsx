@@ -36,7 +36,7 @@ const FindFood = () => {
       distance: "0.8 km",
       availableUntil: "8:00 PM",
       type: "Vegetarian",
-      coordinates: [23.8103, 90.4125] as [number, number], // Dhaka coordinates with type assertion
+      coordinates: [23.8103, 90.4125] as [number, number],
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
     },
     {
@@ -47,7 +47,7 @@ const FindFood = () => {
       distance: "1.2 km",
       availableUntil: "6:30 PM",
       type: "Vegetarian",
-      coordinates: [23.8230, 90.4230] as [number, number], // Slight offset from Dhaka with type assertion
+      coordinates: [23.8230, 90.4230] as [number, number],
       image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
     },
     {
@@ -58,7 +58,7 @@ const FindFood = () => {
       distance: "2.5 km",
       availableUntil: "9:00 PM",
       type: "Mixed",
-      coordinates: [22.3308, 91.8313] as [number, number], // Chittagong coordinates with type assertion
+      coordinates: [22.3308, 91.8313] as [number, number],
       image: "https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1930&q=80"
     },
     {
@@ -69,7 +69,7 @@ const FindFood = () => {
       distance: "3.1 km",
       availableUntil: "7:15 PM",
       type: "Vegan",
-      coordinates: [24.8949, 91.8711] as [number, number], // Sylhet coordinates with type assertion
+      coordinates: [24.8949, 91.8711] as [number, number],
       image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
@@ -80,7 +80,7 @@ const FindFood = () => {
       distance: "1.8 km",
       availableUntil: "8:30 PM",
       type: "Vegetarian",
-      coordinates: [24.3745, 88.6042] as [number, number], // Rajshahi coordinates with type assertion
+      coordinates: [24.3745, 88.6042] as [number, number],
       image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     },
     {
@@ -91,7 +91,7 @@ const FindFood = () => {
       distance: "4.2 km",
       availableUntil: "6:00 PM",
       type: "Vegan",
-      coordinates: [22.8456, 89.5538] as [number, number], // Khulna coordinates with type assertion
+      coordinates: [22.8456, 89.5538] as [number, number],
       image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80"
     }
   ];
@@ -152,8 +152,8 @@ const FindFood = () => {
                 className="rounded-lg"
               >
                 <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 {mockFoodItems.map(item => (
                   <Marker 
