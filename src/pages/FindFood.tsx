@@ -1,20 +1,21 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Users, Search, Filter } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
+import L, { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 // Define a custom marker icon
 const customMarkerIcon = new L.Icon({
-  iconUrl: '/marker-icon.png', // Path to your marker icon
-  iconRetinaUrl: '/marker-icon-2x.png', // Path to your marker icon for retina screens
-  shadowUrl: '/marker-shadow.png', // Path to your marker shadow
-  iconSize: [25, 41], // Size of the icon
-  iconAnchor: [12, 41], // The point of the icon which will correspond to marker's location
-  popupAnchor: [1, -34], // The point from which the popup should open relative to the iconAnchor
-  shadowSize: [41, 41] // Size of the shadow
+  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
 });
 
 interface FoodItem {
@@ -61,6 +62,9 @@ const FindFood = () => {
     const matchesType = filterType === 'all' || food.type === filterType;
     return matchesSearch && matchesType;
   });
+
+  // Bangladesh center coordinates (Dhaka)
+  const bangladeshCenter: LatLngExpression = [23.8103, 90.4125];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -132,14 +136,14 @@ const FindFood = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section - Bangladesh OpenStreetMap */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Food Locations Near You</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Food Locations in Bangladesh</h2>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <MapContainer
-              center={[51.505, -0.09]}
-              zoom={13}
+              center={bangladeshCenter}
+              zoom={7}
               style={{ height: '400px', width: '100%' }}
               className="z-10"
             >
@@ -147,11 +151,6 @@ const FindFood = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
-              <Marker position={[51.505, -0.09]} icon={customMarkerIcon}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-              </Marker>
             </MapContainer>
           </div>
         </div>
