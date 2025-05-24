@@ -2,9 +2,10 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MapPin, Clock, Users, Search, Filter } from 'lucide-react';
+import { MapPin, Clock, Users, Search, Filter, ArrowLeft } from 'lucide-react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import L, { LatLngExpression } from 'leaflet';
+import { Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 
 // Define a custom marker icon
@@ -68,10 +69,30 @@ const FindFood = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section */}
-      <header className="bg-white shadow-md py-6">
+      {/* Navigation Header */}
+      <header className="bg-white shadow-md py-4">
         <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold text-gray-800">Find Available Food</h1>
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" asChild className="p-2">
+              <Link to="/">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+            </Button>
+            <h1 className="text-2xl font-bold text-gray-800">Find Available Food</h1>
+          </div>
+          
+          {/* Quick Navigation */}
+          <div className="flex gap-2 mt-4">
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/share">Share Food</Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/volunteer">Volunteer</Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/about">About</Link>
+            </Button>
+          </div>
         </div>
       </header>
 

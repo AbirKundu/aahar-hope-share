@@ -24,7 +24,7 @@ const CallToAction = () => {
           <Button asChild className="bg-white text-orange-600 hover:bg-orange-100 rounded-full px-8 py-6 text-lg font-medium">
             <Link to="/share">Share Food Now</Link>
           </Button>
-          <Button asChild variant="outline" className="border-white text-white hover:bg-orange-700 rounded-full px-8 py-6 text-lg font-medium">
+          <Button asChild variant="outline" className="border-white text-orange-600 bg-white hover:bg-orange-50 rounded-full px-8 py-6 text-lg font-medium">
             <Link to="/find">Find Available Food</Link>
           </Button>
         </div>
