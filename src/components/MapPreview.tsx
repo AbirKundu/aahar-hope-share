@@ -1,15 +1,10 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
 
 const MapPreview = () => {
-  const [mockLocations] = useState([
-    { id: 1, name: "Homemade Dinner", type: "Cooked Meal", availability: "5:00 PM - 8:00 PM", location: "Park Street" },
-    { id: 2, name: "Fresh Vegetables", type: "Raw Food", availability: "10:00 AM - 2:00 PM", location: "Central Market" },
-    { id: 3, name: "Bakery Items", type: "Bread & Pastries", availability: "3:00 PM - 7:00 PM", location: "Baker Avenue" },
-  ]);
+  const [mockLocations] = useState([]);
 
   return (
     <section className="py-16 bg-white">
