@@ -35,6 +35,37 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Floating Food Images */}
+      <div className="absolute right-10 top-1/4 z-20 hidden lg:block">
+        <div className="animate-float">
+          <img 
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+            alt="Pizza"
+            className="w-24 h-24 rounded-full object-cover shadow-lg border-4 border-white/30"
+          />
+        </div>
+      </div>
+
+      <div className="absolute right-32 bottom-1/3 z-20 hidden lg:block">
+        <div className="animate-float" style={{ animationDelay: '1s' }}>
+          <img 
+            src="https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+            alt="Indian Food"
+            className="w-20 h-20 rounded-full object-cover shadow-lg border-4 border-white/30"
+          />
+        </div>
+      </div>
+
+      <div className="absolute left-20 bottom-1/4 z-20 hidden lg:block">
+        <div className="animate-float" style={{ animationDelay: '2s' }}>
+          <img 
+            src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+            alt="Fresh Fruits"
+            className="w-28 h-28 rounded-full object-cover shadow-lg border-4 border-white/30"
+          />
+        </div>
+      </div>
     </div>
   );
 };
