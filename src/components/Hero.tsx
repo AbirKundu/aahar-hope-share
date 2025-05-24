@@ -49,15 +49,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute left-20 bottom-1/4 z-20 hidden lg:block">
-        <div className="animate-float" style={{ animationDelay: '2s' }}>
-          <img 
-            src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-            alt="Fresh Fruits"
-            className="w-24 h-24 rounded-full object-cover shadow-lg border-4 border-white/30"
-          />
-        </div>
-      </div>
+      
     </div>
   );
 };
