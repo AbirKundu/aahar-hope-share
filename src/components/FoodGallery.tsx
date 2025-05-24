@@ -21,11 +21,7 @@ const FoodGallery = () => {
       alt: "Fresh Vegetables",
       title: "Farm Fresh Vegetables"
     },
-    {
-      src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      alt: "Pizza",
-      title: "Wood Fired Pizza"
-    },
+   
     {
       src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       alt: "Traditional Food",
