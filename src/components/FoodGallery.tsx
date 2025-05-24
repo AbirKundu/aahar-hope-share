@@ -30,6 +30,16 @@ const FoodGallery = () => {
       src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       alt: "Traditional Food",
       title: "Traditional Cuisine"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      alt: "Indian Thali",
+      title: "Complete Indian Meal"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      alt: "Sandwich",
+      title: "Fresh Sandwiches"
     }
   ];
 
@@ -45,7 +55,7 @@ const FoodGallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {foodImages.map((image, index) => (
             <div 
               key={index}

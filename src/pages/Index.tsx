@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import FoodGallery from '@/components/FoodGallery';
+import FoodListings from '@/components/FoodListings';
 import MapPreview from '@/components/MapPreview';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
@@ -25,6 +26,7 @@ const Index = () => {
             </div>
           </section>
         )}
+        <FoodListings />
         <FoodGallery />
         <HowItWorks />
         <MapPreview />
