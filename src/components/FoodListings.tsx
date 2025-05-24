@@ -35,16 +35,7 @@ const FoodListings = () => {
       image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       donor: "Sunshine Bakery"
     },
-    {
-      id: 4,
-      title: "Pizza Slices",
-      type: "Cooked Meal",
-      description: "Leftover pizza from lunch service - margherita and vegetable",
-      availableTime: "2:00 PM - 5:00 PM",
-      location: "Food Court Mall",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      donor: "Tony's Pizzeria"
-    },
+   
     {
       id: 5,
       title: "Traditional Biryani",
