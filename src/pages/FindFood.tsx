@@ -146,7 +146,7 @@ const FindFood = () => {
           {viewMode === 'map' ? (
             <div className="bg-gray-200 rounded-lg h-[600px] overflow-hidden">
               <MapContainer 
-                center={[23.8103, 90.4125]} 
+                center={[23.8103, 90.4125] as L.LatLngExpression} 
                 zoom={6} 
                 style={{ height: '100%', width: '100%' }}
                 className="rounded-lg"
@@ -158,7 +158,7 @@ const FindFood = () => {
                 {mockFoodItems.map(item => (
                   <Marker 
                     key={item.id} 
-                    position={item.coordinates}
+                    position={item.coordinates as L.LatLngExpression}
                   >
                     <Popup>
                       <div className="p-1">
